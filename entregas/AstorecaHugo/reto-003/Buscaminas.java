@@ -98,12 +98,11 @@ public class Buscaminas{
 	
 	
 	System.out.println("introduzca posicion X");
-	Scanner sc=new Scanner(System.in);
-	posx=sc.nextInt();
+	Scanner scanner=new Scanner(System.in);
+	posx=scanner.nextInt();
 	
 	System.out.println("Introduzca posicion Y");
-	Scanner sc2=new Scanner(System.in);
-	posy=sc.nextInt();
+	posy=scanner.nextInt();
 	
 	
 	if ((tablero[posx][posy])=="  "){
