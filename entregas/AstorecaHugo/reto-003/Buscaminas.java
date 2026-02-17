@@ -94,8 +94,9 @@ public class Buscaminas {
             return true;
 
         }
-    
+    return false;
     }
+}
 
 
 
