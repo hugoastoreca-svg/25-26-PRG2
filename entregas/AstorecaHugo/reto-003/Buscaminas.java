@@ -35,12 +35,6 @@ static final int MINA = -1;
 	
 	
 	
-	System.out.println("introduzca posicion X");
-	Scanner scanner=new Scanner(System.in);
-	posx=scanner.nextInt();
-	
-	System.out.println("Introduzca posicion Y");
-	posy=scanner.nextInt();
 	
 	
 	if ((tablero[posx][posy])=="  "){
@@ -114,5 +108,10 @@ static void colocarMinas(String tablero[][]){
         }
     }
 }
-
+static void pedirCoordenadas(int posx, int posy){
+    Scanner scanner = new Scanner(System.in);
+    System.out.println("Introduce la coordenada x:");
+    posx = scanner.nextInt();
+    System.out.println("Introduce la coordenada y:");
+    posy = scanner.nextInt();
 }
