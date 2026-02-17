@@ -34,7 +34,7 @@ public class Buscaminas{
 		
 	
 	
-	//He tenido problemas al hacerlo con un bucle y al no encontrar la solucion he preferido hacerlo asi aun sabiendo que es mas costoso
+	
 		posa=(int)((Math.random()*5)+1);
 		posb=(int)((Math.random()*7)+1);
 		for (int x=1; x < tablero.length; x++) {
