@@ -34,7 +34,6 @@ public class Buscaminas{
 		
 	
 	
-	
 		posa=(int)((Math.random()*5)+1);
 		posb=(int)((Math.random()*7)+1);
 		for (int x=1; x < tablero.length; x++) {
