@@ -1,5 +1,11 @@
 import java.util.Scanner;
 public class Buscaminas{
+
+static final int FILAS = 5;
+static final int COLUMNAS = 7;
+static final int TOTAL_MINAS = 5;
+static final int MINA = -1;
+
 	public static void main(String[] args){
 	
 	int minas=0;
@@ -34,8 +40,8 @@ public class Buscaminas{
 		
 	
 	
-		posa=(int)((Math.random()*5)+1);
-		posb=(int)((Math.random()*7)+1);
+		posa=(int)((Math.random()*FILAS)+1);
+		posb=(int)((Math.random()*COLUMNAS)+1);
 		for (int x=1; x < tablero.length; x++) {
 			for (int y=1; y < 8; y++){
 							
@@ -43,8 +49,17 @@ public class Buscaminas{
 			}
 		}
 		
-		posa=(int)((Math.random()*5)+1);
-		posb=(int)((Math.random()*7)+1);
+		posa=(int)((Math.random()*FILAS)+1);
+		posb=(int)((Math.random()*COLUMNAS)+1);
+		for (int x=1; x < tablero.length; x++) {
+			for (int y=1; y < 8 ; y++){
+							
+				tablero[posa][posb]="MM";
+			}
+		}
+		
+		posa=(int)((Math.random()*FILAS)+1);
+		posb=(int)((Math.random()*COLUMNAS)+1);
 		for (int x=1; x < tablero.length; x++) {
 			for (int y=1; y < 8; y++){
 							
@@ -52,25 +67,16 @@ public class Buscaminas{
 			}
 		}
 		
-		posa=(int)((Math.random()*5)+1);
-		posb=(int)((Math.random()*7)+1);
+		posa=(int)((Math.random()*FILAS)+1);
+		posb=(int)((Math.random()*COLUMNAS)+1);
 		for (int x=1; x < tablero.length; x++) {
 			for (int y=1; y < 8; y++){
 							
 				tablero[posa][posb]="MM";
 			}
 		}
-		
-		posa=(int)((Math.random()*5)+1);
-		posb=(int)((Math.random()*7)+1);
-		for (int x=1; x < tablero.length; x++) {
-			for (int y=1; y < 8; y++){
-							
-				tablero[posa][posb]="MM";
-			}
-		}
-		posa=(int)((Math.random()*5)+1);
-		posb=(int)((Math.random()*7)+1);
+		posa=(int)((Math.random()*FILAS)+1);
+		posb=(int)((Math.random()*COLUMNAS)+1);
 		for (int x=1; x < tablero.length; x++) {
 			for (int y=1; y < 8; y++){
 							
