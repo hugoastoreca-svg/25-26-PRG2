@@ -70,14 +70,7 @@ static final int MINA = -1;
 		
 	while(!salida){
 		
-	for (int x=0; x < tablero2.length; x++) {
-		System.out.print("|");
-		for (int y=0; y < 8; y++){
-	
-			System.out.print (tablero2[x][y]);
-		}
-		System.out.println("|");
-	}
+	mostrarTablero(tablero2);
 	
 
 		
@@ -142,6 +135,14 @@ static String[][] crearTablero(){
     }
 return tablero;
 }
-
+static void mostrarTablero(String tablero[][]){
+    for (int x=0 ; x< tablero.length; x++){
+        System.out.print("|");
+        for (int y=0; y < tablero[0].length; y++){
+            System.out.print(tablero[x][y]);
+        }
+        System.out.println("|");
+    }
+}
 
 }
