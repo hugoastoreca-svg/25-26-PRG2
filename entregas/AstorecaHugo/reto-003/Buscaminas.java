@@ -10,12 +10,7 @@ public class Buscaminas {
 
     public static void main(String[] args) {
 
-        int minas = 0;
-        int celdasVacias = 0;
-        int posa = 0;
-        int posb = 0;
-        int posc = 0;
-        int posd = 0;
+
         int posx = 0;
         int posy = 0;
         boolean salida = false;
@@ -99,4 +94,8 @@ public class Buscaminas {
             return true;
 
         }
+    
     }
+
+
+
