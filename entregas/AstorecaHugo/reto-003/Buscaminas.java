@@ -21,50 +21,8 @@ static final int MINA = -1;
 	String tablero [][]= crearTablero();
     String tablero2 [][]= crearTablero();
 	
-	
-		posa=(int)((Math.random()*FILAS)+1);
-		posb=(int)((Math.random()*COLUMNAS)+1);
-		for (int x=1; x < tablero.length; x++) {
-			for (int y=1; y < 8; y++){
-							
-				tablero[posa][posb]="MM";
-			}
-		}
+	colocarMinas(tablero);
 		
-		posa=(int)((Math.random()*FILAS)+1);
-		posb=(int)((Math.random()*COLUMNAS)+1);
-		for (int x=1; x < tablero.length; x++) {
-			for (int y=1; y < 8 ; y++){
-							
-				tablero[posa][posb]="MM";
-			}
-		}
-		
-		posa=(int)((Math.random()*FILAS)+1);
-		posb=(int)((Math.random()*COLUMNAS)+1);
-		for (int x=1; x < tablero.length; x++) {
-			for (int y=1; y < 8; y++){
-							
-				tablero[posa][posb]="MM";
-			}
-		}
-		
-		posa=(int)((Math.random()*FILAS)+1);
-		posb=(int)((Math.random()*COLUMNAS)+1);
-		for (int x=1; x < tablero.length; x++) {
-			for (int y=1; y < 8; y++){
-							
-				tablero[posa][posb]="MM";
-			}
-		}
-		posa=(int)((Math.random()*FILAS)+1);
-		posb=(int)((Math.random()*COLUMNAS)+1);
-		for (int x=1; x < tablero.length; x++) {
-			for (int y=1; y < 8; y++){
-							
-				tablero[posa][posb]="MM";
-			}
-		}
 		
 		
 		
@@ -142,6 +100,18 @@ static void mostrarTablero(String tablero[][]){
             System.out.print(tablero[x][y]);
         }
         System.out.println("|");
+    }
+}
+
+static void colocarMinas(String tablero[][]){
+    int minasColocadas = 0;
+    while (minasColocadas<TOTAL_MINAS){
+        int fila = (int)(Math.random()*FILAS)+1;
+        int columna = (int)(Math.random()*COLUMNAS)+1;
+        if (tablero[fila][columna]!="*"){
+            tablero[fila][columna]="*";
+            minasColocadas++;
+        }
     }
 }
 
