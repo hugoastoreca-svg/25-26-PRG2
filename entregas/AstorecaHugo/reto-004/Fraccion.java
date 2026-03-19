@@ -1,55 +1,45 @@
 
-    
 public class Fraccion {
-
+    
     private int numerador;
     private int denominador;
-
-    private int calcularMCD(int numerador, int denominador) {
-        while (denominador != 0) {
-            int temporal = denominador;
-            denominador = numerador % denominador;
-            numerador = temporal;
-        }
-        return numerador;
-    }
-
+    
+    
     public Fraccion(int numerador, int denominador) {
         assert denominador != 0;
         this.numerador = numerador;
         this.denominador = denominador;
-
+        simplificar();
     }
-
+    
     public Fraccion(int numero) {
         this.numerador = numero;
         this.denominador = 1;
-
     }
-
+    
     public Fraccion(Fraccion fraccion) {
         this.numerador = fraccion.numerador;
         this.denominador = fraccion.denominador;
     }
-
+    
     public Fraccion clonar() {
         return new Fraccion(this);
     }
-
+    
     public void sumar(Fraccion fraccion) {
         int nuevoNumerador = this.numerador * fraccion.denominador + fraccion.numerador * this.denominador;
         int nuevoDenominador = this.denominador * fraccion.denominador;
         this.numerador = nuevoNumerador;
         this.denominador = nuevoDenominador;
     }
-
+    
     public void restar(Fraccion fraccion) {
         int nuevoNumerador = this.numerador * fraccion.denominador - fraccion.numerador * this.denominador;
         int nuevoDenominador = this.denominador * fraccion.denominador;
         this.numerador = nuevoNumerador;
         this.denominador = nuevoDenominador;
     }
-
+    
     public void multiplicar(Fraccion fraccion) {
         int nuevoNumerador = this.numerador * fraccion.numerador;
         int nuevoDenominador = this.denominador * fraccion.denominador;
@@ -57,7 +47,7 @@ public class Fraccion {
         this.numerador = nuevoNumerador;
         this.denominador = nuevoDenominador;
     }
-
+    
     public void dividir(Fraccion fraccion) {
         assert fraccion.numerador != 0;
         int nuevoNumerador = this.numerador * fraccion.denominador;
@@ -68,9 +58,8 @@ public class Fraccion {
 
     public boolean esMayor(Fraccion fraccion) {
         return this.numerador * fraccion.denominador > fraccion.numerador * this.denominador;
-
     }
-
+    
     public boolean esMenor(Fraccion fraccion) {
         return this.numerador * fraccion.denominador < fraccion.numerador * this.denominador;
     }
@@ -88,19 +77,24 @@ public class Fraccion {
         int numeradorTemporal = this.numerador;
         this.numerador = this.denominador;
         this.denominador = numeradorTemporal;
-
     }
 
     public void oponer() {
         this.numerador = this.numerador * -1;
     }
-
+    
     public void simplificar() {
         int mcd = calcularMCD(numerador, denominador);
         this.numerador = this.numerador / mcd;
         this.denominador = this.denominador / mcd;
     }
-
+    
+    private int calcularMCD(int numerador, int denominador) {
+        while (denominador != 0) {
+            int temporal = denominador;
+            denominador = numerador % denominador;
+            numerador = temporal;
+        }
+        return numerador;
+    }
 }
-
-
