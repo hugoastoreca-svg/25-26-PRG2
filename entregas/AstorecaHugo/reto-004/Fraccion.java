@@ -58,7 +58,7 @@ public class Fraccion {
     }
 
     public void dividir(Fraccion fraccion) {
-        assert fraccion.numerador !=0;
+        assert fraccion.numerador != 0;
         int nuevoNumerador = this.numerador * fraccion.denominador;
         int nuevoDenominador = this.denominador * fraccion.numerador;
         this.numerador = nuevoNumerador;
