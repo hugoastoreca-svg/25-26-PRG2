@@ -1,21 +1,24 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
 
 class Caballo {
+    private int numero;
+    private int posicion;
 
-    Caballo(int i) {
-        throw new UnsupportedOperationException("Not supported yet.");
+
+    Caballo(int numero) {
+        this.numero = numero;
+        this.posicion = 0;
     }
 
     void moverse(Pista pista) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
+        int movimiento = (int)(Math.random()*3);
+        posicion = posicion + movimiento;
 
-    void celebrarVictoria() {
-        throw new UnsupportedOperationException("Not supported yet.");
     }
+    public int getPosicion (){
+        return posicion;
 
+    }
+    public int getNumero(){
+        return numero;
+    }
 }
