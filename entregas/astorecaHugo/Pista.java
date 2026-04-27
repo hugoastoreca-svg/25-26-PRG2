@@ -1,32 +1,70 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
 
 class Pista {
 
-    Pista(int par) {
+    
+
+        private int longitud;
+        private Console console;
+
+        Pista(int longitud) {
+            this.longitud = longitud;
+            console = new Console();
+
+        }
+
+    void mostrar(Caballo[] caballos) {
+            for (int i = 0; i < caballos.length; i++) {
+                for (int j = 0; j < longitud; j++) {
+                    if (j == caballos[i].getPosicion()) {
+                        console.write(";--;'");
+                    } else {
+                        console.write("-");
+                    }
+                    console.writeln("");
+
+                }
+            }
+
+        
+
+    public boolean hayGanadores(Caballo[] caballos) {
+            for (int i = 0; i < caballos.length; i++) {
+                if (caballos[i].getPosicion() >= longitud) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
     }
 
-    void meter(Caballo caballo) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    private Caballo obtenerGanador(Caballo[] caballos) {
+        for (int i = 0; i < caballos.length; i++) {
+            if (caballos[i].getPosicion() >= longitud) {
+                return caballos[i];
+            }
+        }
+        return null;
     }
 
-    void mostrar() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    private boolean hayEmpate(Caballo[] caballos) {
+        int contadorGanador = 0;
+        for (int i = 0; i < caballos.length; i++) {
+            if (caballos[i].getPosicion() >= longitud) {
+                contadorGanador++;
+            }
+        }
+        if (contadorGanador > 1) {
+            return true;
+        }
+        return false;
     }
 
-    boolean hayGanador() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    boolean hayGanadores() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    void mostrarResultadoFinal() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public void mostrarResultadoFinal() {
+        Caballo ganador = obtenerGanador(caballos);
+        if (ganador != null) {
+            console.writeln("El ganador es: " + ganador.getNumero());
+        }
     }
 
 }
